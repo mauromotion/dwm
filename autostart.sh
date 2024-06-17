@@ -1,5 +1,23 @@
 #!/bin/bash
 
+# Kill already existing processes to avoid duplication
+processes=(
+  "picom"
+  "udiskie"
+  "polkit-gnome-au"
+  "pa-applet"
+  "nm-applet"
+  "nextcloud"
+  "openrgb"
+  )
+
+for proc in "${processes[@]}"; do
+  pids=$(pgrep "$proc")
+
+  if [ -n "$pids" ]; then
+    kill $pids
+  fi
+
 # Autostart programs
 picom -b &
 nitrogen --restore &
