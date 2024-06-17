@@ -28,8 +28,9 @@ static const Rule rules[] = {
 	 *	WM_NAME(STRING) = title
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
+  { "thunderbird",  NULL,   NULL,       1 << 1,            0,           -1 },
+  { "Gimp",     NULL,       NULL,       1 << 5,            1,           -1 },
+	{ "steam",    NULL,       NULL,       1 << 8,            1,           -1 },
 };
 
 /* layout(s) */
@@ -60,13 +61,13 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 /* static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL }; */
 static const char *dmenucmd[] = {"rofi", "-show", "drun", NULL};
-static const char *dmenupwr[] = {"rofi", "-show", "power-menu", "-modi", "power-menu:rofi-power-menu --choices=suspend/lockscreen/reboot/shutdown", NULL};
+static const char *rofipwr[] = {"rofi", "-show", "power-menu", "-modi", "power-menu:rofi-power-menu --choices=suspend/lockscreen/reboot/shutdown", NULL};
 static const char *termcmd[]  = { "wezterm", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_g,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_p,      spawn,          {.v = dmenupwr } },
+	{ MODKEY,                       XK_p,      spawn,          {.v = rofipwr } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_e,      focusstack,     {.i = +1 } },
@@ -77,7 +78,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_o,      setmfact,       {.f = +0.05} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
-	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
+	{ MODKEY|ShiftMask,             XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
@@ -98,7 +99,8 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY|ControlMask|ShiftMask, XK_e,      quit,          {0} },
+	{ MODKEY|ControlMask|ShiftMask, XK_r,      quit,          {1} },
 };
 
 /* button definitions */
