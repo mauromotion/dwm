@@ -7,11 +7,11 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "JetBrains Mono Nerd Font:size=12:antialias=true:autohint=true" };
 static const char dmenufont[]       = "JetBrainsMono NF:size=12";
-static const char col_gray1[]       = "#2e3440";
+static const char col_gray1[]       = "#2e3440"; // Unfocused bg color
 static const char col_gray2[]       = "#3b4252";
-static const char col_gray3[]       = "#88c0d0";
-static const char col_gray4[]       = "#d8dee9";
-static const char col_cyan[]        = "#81a1c1";
+static const char col_gray3[]       = "#d8dee9"; // Unfocused tags' text color
+static const char col_gray4[]       = "#3b4252"; // Focused tags' text color 
+static const char col_cyan[]        = "#81a1c1"; // Focus bg color
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -30,7 +30,7 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
   { "thunderbird",  NULL,   NULL,       1 << 1,            0,           -1 },
   { "Gimp",     NULL,       NULL,       1 << 5,            1,           -1 },
-	{ "steam",    NULL,       NULL,       1 << 8,            1,           -1 },
+	{ "steam",    NULL,       NULL,       1 << 6,            1,           -1 },
 };
 
 /* layout(s) */
@@ -119,4 +119,3 @@ static const Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-
