@@ -2,6 +2,7 @@
 
 # Kill already existing processes to avoid duplication
 processes=(
+	"slstatus"
 	"picom"
 	"udiskie"
 	"polkit-gnome-au"
@@ -20,6 +21,7 @@ for proc in "${processes[@]}"; do
 done
 
 # Autostart programs
+slstatus &
 picom -b &
 nitrogen --restore &
 udiskie -a -n -t &
