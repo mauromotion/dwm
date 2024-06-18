@@ -2,7 +2,7 @@
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const unsigned int gappx     = 6;        /* gaps between windows */
+static const unsigned int gappx     = 0;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayonleft = 0;    /* 0: systray in the right corner, >0: systray on left of status text */
@@ -17,7 +17,7 @@ static const char col_gray1[]       = "#2e3440"; // Unfocused bg color
 static const char col_gray2[]       = "#3b4252";
 static const char col_gray3[]       = "#d8dee9"; // Unfocused tags' text color
 static const char col_gray4[]       = "#3b4252"; // Focused tags' text color 
-static const char col_cyan[]        = "#81a1c1"; // Focus bg color
+static const char col_cyan[]        = "#88c0d0"; // Focus bg color
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
