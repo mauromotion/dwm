@@ -2,7 +2,7 @@
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
-static const unsigned int gappx     = 5;        /* gaps between windows */
+static const unsigned int gappx     = 6;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayonleft = 0;    /* 0: systray in the right corner, >0: systray on left of status text */
@@ -69,12 +69,13 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = {"rofi", "-show", "drun", NULL};
 static const char *rofipwr[] = {"rofi", "-show", "power-menu", "-modi", "power-menu:rofi-power-menu --choices=suspend/lockscreen/reboot/shutdown", NULL};
 static const char *termcmd[]  = { "wezterm", NULL };
+static const char *browscmd[] = {"firefox", NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_g,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = rofipwr } },
-	{ MODKEY,                       XK_b,      spawn,          {.v = "firefox"} },
+	{ MODKEY,                       XK_b,      spawn,          {.v = browscmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ControlMask,           XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_e,      focusstack,     {.i = +1 } },
