@@ -74,6 +74,7 @@ static const char *rofipwr[] = {"rofi", "-show", "power-menu", "-modi", "power-m
 static const char *termcmd[]  = { "wezterm", NULL };
 static const char *browscmd[] = {"firefox", NULL};
 
+#include "movestack.c"
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_g,      spawn,          {.v = dmenucmd } },
@@ -87,6 +88,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_n,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_o,      setmfact,       {.f = +0.05} },
+	{ MODKEY|ShiftMask,             XK_e,      movestack,      {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_i,      movestack,      {.i = -1 } },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_q,      killclient,     {0} },
