@@ -71,10 +71,11 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 /* static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL }; */
-static const char *dmenucmd[] = {"rofi", "-show", "drun", NULL};
+static const char *dmenucmd[] = {"rofi", "-show", "combi", NULL};
 static const char *rofipwr[] = {"rofi", "-show", "power-menu", "-modi", "power-menu:rofi-power-menu --choices=suspend/lockscreen/reboot/shutdown", NULL};
 static const char *termcmd[]  = { "wezterm", NULL };
 static const char *browscmd[] = {"firefox", NULL};
+static const char *flmngrcmd[] = {"thunar", NULL};
 
 #include "movestack.c"
 static const Key keys[] = {
@@ -83,6 +84,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_p,      spawn,          {.v = rofipwr } },
 	{ MODKEY,                       XK_b,      spawn,          {.v = browscmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+	{ MODKEY,                       XK_f,      spawn,          {.v = flmngrcmd } },
 	{ MODKEY|ControlMask,           XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_e,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_i,      focusstack,     {.i = -1 } },
