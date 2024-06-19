@@ -21,6 +21,7 @@ dwm: ${OBJ}
 
 clean:
 	rm -f dwm ${OBJ} dwm-${VERSION}.tar.gz
+	rm -f dwm *.o
 
 dist: clean
 	mkdir -p dwm-${VERSION}
