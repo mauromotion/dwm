@@ -31,6 +31,8 @@ nm-applet &
 nextcloud --background &
 openrgb --startminimized &
 xset b 100 &
+
+# Load color profiles for my desktop monitors
 dispwin -d1 "$HOME/.config/i3/color-profiles/icc/Dell_S2721DGF.icm"
 
 sleep 1
