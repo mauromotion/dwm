@@ -72,7 +72,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 /* static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL }; */
 static const char *dmenucmd[] = {"rofi", "-show", "combi", NULL};
-static const char *rofipwr[] = {"rofi", "-show", "power-menu", "-modi", "power-menu:rofi-power-menu --choices=suspend/lockscreen/reboot/shutdown", NULL};
+static const char *rofipwr[] = {"rofi", "-show", "power-menu", "-modi", "power-menu:rofi-power-menu --choices=suspend/logout/lockscreen/reboot/shutdown", NULL};
 static const char *termcmd[]  = { "wezterm", NULL };
 static const char *browscmd[] = {"firefox", NULL};
 static const char *flmngrcmd[] = {"thunar", NULL};
@@ -131,11 +131,11 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_minus, scratchpad_hide, {0} },
 	{ MODKEY,                       XK_equal,scratchpad_remove,{0} },
 
-{ 0, XF86XK_AudioMute,		spawn,		SHCMD("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; kill -44 $(pidof dwmblocks)") },
-	{ 0, XF86XK_AudioRaiseVolume,	spawn,		SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 0%- && wpctl set-volume @DEFAULT_AUDIO_SINK@ 3%+; kill -44 $(pidof dwmblocks)") },
-	{ 0, XF86XK_AudioLowerVolume,	spawn,		SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 0%+ && wpctl set-volume @DEFAULT_AUDIO_SINK@ 3%-; kill -44 $(pidof dwmblocks)") },
-{ 0, XF86XK_AudioPause,		spawn,		{.v = (const char*[]){ "tauonmb", "pause", NULL } } },
-	{ 0, XF86XK_AudioPlay,		spawn,		{.v = (const char*[]){ "tauonmb", "play", NULL } } },
+  { 0, XF86XK_AudioMute,		      spawn,		SHCMD("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; kill -44 $(pidof dwmblocks)") },
+	{ 0, XF86XK_AudioRaiseVolume,	  spawn,		SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 0%- && wpctl set-volume @DEFAULT_AUDIO_SINK@ 3%+; kill -44 $(pidof dwmblocks)") },
+	{ 0, XF86XK_AudioLowerVolume,	  spawn,		SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 0%+ && wpctl set-volume @DEFAULT_AUDIO_SINK@ 3%-; kill -44 $(pidof dwmblocks)") },
+  { 0, XF86XK_AudioPause,		      spawn,		{.v = (const char*[]){ "playerctl", "pause", NULL } } },
+	{ 0, XF86XK_AudioPlay,		      spawn,		{.v = (const char*[]){ "playerctl", "play", NULL } } },
 };
 
 /* button definitions */
