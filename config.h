@@ -13,11 +13,11 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "JetBrains Mono Nerd Font:size=12:antialias=true:autohint=true" };
 static const char dmenufont[]       = "JetBrainsMono NF:size=12";
-static const char col_gray1[]       = "#2e3440"; // Unfocused bg color
+static const char col_gray1[]       = "#2e3440"; /* Unfocused bg color */
 static const char col_gray2[]       = "#3b4252";
-static const char col_gray3[]       = "#d8dee9"; // Unfocused tags' text color
-static const char col_gray4[]       = "#3b4252"; // Focused tags' text color 
-static const char col_cyan[]        = "#88c0d0"; // Focus bg color
+static const char col_gray3[]       = "#d8dee9"; /* Unfocused tags' text color */  
+static const char col_gray4[]       = "#3b4252"; /* Focused tags' text color */
+static const char col_cyan[]        = "#88c0d0"; /* Focus bg color */
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -26,7 +26,7 @@ static const char *colors[][3]      = {
 
 /* tagging */
 /* static const char *tagsalt[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }; */
-static const char *tags[] = { "home", "mail", "dev", "chat", "docs", "media", "games", "ext-1", "ext-2" };
+static const char *tags[] = { "home", "mail", "dev", "chat", "docs", "media", "games", "edit", "extra"};
 
 static const Rule rules[] = {
 	/* xprop(1):
