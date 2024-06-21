@@ -76,6 +76,7 @@ static const char *rofipwr[] = {"rofi", "-show", "power-menu", "-modi", "power-m
 static const char *termcmd[]  = { "wezterm", NULL };
 static const char *browscmd[] = {"firefox", NULL};
 static const char *flmngrcmd[] = {"thunar", NULL};
+static const char *play_pause_cmd[] = { "playerctl", "play-pause", NULL };
 
 #include <X11/XF86keysym.h>
 #include "movestack.c"
@@ -130,6 +131,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_minus, scratchpad_show, {0} },
 	{ MODKEY|ShiftMask,             XK_minus, scratchpad_hide, {0} },
 	{ MODKEY,                       XK_equal,scratchpad_remove,{0} },
+  { MODKEY|ControlMask,           XK_period, spawn,          {.v = play_pause_cmd } },
 
   { 0, XF86XK_AudioMute,		      spawn,		SHCMD("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle; kill -44 $(pidof dwmblocks)") },
 	{ 0, XF86XK_AudioRaiseVolume,	  spawn,		SHCMD("wpctl set-volume @DEFAULT_AUDIO_SINK@ 0%- && wpctl set-volume @DEFAULT_AUDIO_SINK@ 3%+; kill -44 $(pidof dwmblocks)") },
