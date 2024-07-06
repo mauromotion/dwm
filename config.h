@@ -81,6 +81,7 @@ static const char *rofipwr[] = {"rofi", "-show", "power-menu", "-modi", "power-m
 static const char *termcmd[]  = { "wezterm", NULL };
 static const char *browscmd[] = {"firefox", NULL};
 static const char *flmngrcmd[] = {"thunar", NULL};
+static const char *calccmd[] = {"galculator", NULL};
 static const char *play_pause_cmd[] = { "playerctl", "play-pause", NULL };
 
 #include <X11/XF86keysym.h>
@@ -92,6 +93,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_b,      spawn,          {.v = browscmd } },
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_f,      spawn,          {.v = flmngrcmd } },
+	{ MODKEY,                       XK_c,      spawn,          {.v = calccmd } },
 	{ MODKEY|ControlMask,           XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_e,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_i,      focusstack,     {.i = -1 } },
