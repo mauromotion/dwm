@@ -37,6 +37,7 @@ static const Rule rules[] = {
   { "thunderbird",  NULL,   NULL,       1 << 1,            0,           -1 },
   { "Gimp",     NULL,       NULL,       1 << 5,            1,           -1 },
 	{ "steam",    NULL,       NULL,       1 << 6,            1,           -1 },
+	{ "Viewnior", NULL,       NULL,            0,            1,           -1 },
 };
 
 /* layout(s) */
