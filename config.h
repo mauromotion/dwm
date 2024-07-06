@@ -38,6 +38,10 @@ static const Rule rules[] = {
   { "Gimp",     NULL,       NULL,       1 << 5,            1,           -1 },
 	{ "steam",    NULL,       NULL,       1 << 6,            1,           -1 },
 	{ "Viewnior", NULL,       NULL,            0,            1,           -1 },
+	{ "Galculator", NULL,     NULL,            0,            1,           -1 },
+	{ "Qalculate-gtk", NULL,  NULL,            0,            1,           -1 },
+	{ "Gpick",    NULL,       NULL,            0,            1,           -1 },
+	{ "org.cryptomator.launcher.Cryptomator$MainApp",    NULL,       NULL,            0,            1,           -1 },
 };
 
 /* layout(s) */
