@@ -38,6 +38,10 @@ static const Rule rules[] = {
   { "Gimp",     NULL,       NULL,       1 << 5,            1,           -1 },
 	{ "steam",    NULL,       NULL,       1 << 6,            1,           -1 },
 	{ "Viewnior", NULL,       NULL,            0,            1,           -1 },
+	{ "mpv",      NULL,       NULL,            0,            1,           -1 },
+	{ "vlc",      NULL,       NULL,            0,            1,           -1 },
+	{ "Pavucontrol",NULL,     NULL,            0,            1,           -1 },
+	{ "Lxappearance",NULL,    NULL,            0,            1,           -1 },
 	{ "Galculator", NULL,     NULL,            0,            1,           -1 },
 	{ "Qalculate-gtk", NULL,  NULL,            0,            1,           -1 },
 	{ "Gpick",    NULL,       NULL,            0,            1,           -1 },
@@ -82,6 +86,7 @@ static const char *termcmd[]  = { "wezterm", NULL };
 static const char *browscmd[] = {"firefox", NULL};
 static const char *flmngrcmd[] = {"thunar", NULL};
 static const char *calccmd[] = {"galculator", NULL};
+static const char *screenshotcmd[] = {"flameshot", "gui", NULL};
 static const char *play_pause_cmd[] = { "playerctl", "play-pause", NULL };
 
 #include <X11/XF86keysym.h>
@@ -94,6 +99,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_f,      spawn,          {.v = flmngrcmd } },
 	{ MODKEY,                       XK_c,      spawn,          {.v = calccmd } },
+	{ MODKEY|ShiftMask,             XK_z,      spawn,          {.v = screenshotcmd } },
 	{ MODKEY|ControlMask,           XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_e,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_i,      focusstack,     {.i = -1 } },
@@ -134,7 +140,6 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ControlMask|ShiftMask, XK_r,      quit,          {0} },
-	{ MODKEY|ControlMask|ShiftMask, XK_e,      quit,          {1} },
 	{ MODKEY,                       XK_minus, scratchpad_show, {0} },
 	{ MODKEY|ShiftMask,             XK_minus, scratchpad_hide, {0} },
 	{ MODKEY,                       XK_equal,scratchpad_remove,{0} },
