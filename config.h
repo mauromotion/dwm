@@ -11,7 +11,7 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;        /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "JetBrains Mono Nerd Font:size=12:antialias=true:autohint=true" };
+static const char *fonts[]          = { "JetBrains Mono Nerd Font:size=12:style:medium:antialias=true:autohint=true" };
 static const char dmenufont[]       = "JetBrainsMono NF:size=12";
 static const char col_gray1[]       = "#2e3440"; /* Unfocused bg color */
 static const char col_gray2[]       = "#3b4252";
